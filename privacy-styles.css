@@ -37,7 +37,7 @@ body {
     font-weight: 700;
     color: white;
     text-decoration: none;
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+     background: linear-gradient(45deg, #6b81ff 40%, #9e4ecd 60%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

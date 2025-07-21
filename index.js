@@ -27,15 +27,6 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Add smooth scrolling effect
-document.addEventListener('DOMContentLoaded', () => {
-  const features = document.querySelectorAll('.feature');
-  features.forEach((feature, index) => {
-    feature.style.animationDelay = `${index * 0.1}s`;
-    feature.style.animation = 'fadeInUp 0.6s ease-out forwards';
-  });
-});
-
 function spinAnimation() {
   gsap.fromTo(
     '#demoVideo',
@@ -53,41 +44,4 @@ function spinAnimation() {
 window.addEventListener('load', () => {
   spinAnimation(); // Initial run
   setInterval(spinAnimation, 34000); // Repeat every 15 seconds
-});
-
-// GSAP Text Reveal Animation for Feature Divs
-document.addEventListener('DOMContentLoaded', function () {
-  const features = document.querySelectorAll('.feature');
-
-  features.forEach((feature, index) => {
-    const h3 = feature.querySelector('h3');
-    const p = feature.querySelector('p');
-
-    // Set initial states - hidden and moved down
-    gsap.set([h3, p], {
-      opacity: 0,
-      y: 30,
-    });
-
-    // Create reveal animation with stagger
-    const tl = gsap.timeline({
-      delay: index * 0.2, // Stagger each feature
-    });
-
-    tl.to(h3, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: 'power2.out',
-    }).to(
-      p,
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: 'power2.out',
-      },
-      '-=0.3'
-    ); // Start paragraph animation before h3 finishes
-  });
 });

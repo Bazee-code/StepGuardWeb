@@ -10,7 +10,7 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <a href="#"></a>
+        <a href="#" class="logo">StepGuard</a>
         <button class="hamburger" onclick="toggleMenu()">
             <span></span>
             <span></span>
@@ -37,20 +37,16 @@
                 <h1 class="hero-title">Fitness Meets Productivity</h1>
                  <div class="features">
                     <div class="feature">
-                        <h3>📱 Smart Restrictions</h3>
-                        <p>Automatically adjust device limitations based on your daily activity levels</p>
+                        <p>Automatically adjust device restrictions based on your daily activity levels</p>
                     </div>
                     <div class="feature">
-                        <h3>👟 Step Tracking</h3>
-                        <p>Seamlessly integrates with your fitness tracker to monitor progress</p>
+                        <p>Seamlessly integrates with your Apple Watch to monitor progress</p>
                     </div>
                     <div class="feature">
-                        <h3>🎯 Goal Setting</h3>
                         <p>Set personalized step targets and unlock device privileges as you achieve them</p>
                     </div>
                     <div class="feature">
-                        <h3>📊 Analytics</h3>
-                        <p>Detailed insights into your activity patterns and device usage correlation</p>
+                        <p>Get detailed insights into your activity patterns and device usage correlation</p>
                     </div>
                 </div>
                 <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank" rel="noopener">
@@ -62,7 +58,7 @@
         <!-- Right Side Image -->
         <div class="right-image">
             <video id="demoVideo" autoplay muted loop playsinline>
-            <source src="/assets/video.mp4" type="video/mp4" />
+            <source src="/assets/demovideo720.mov" type="video/mp4" />
             Your browser does not support the video tag.
             </video>
         </div>
@@ -75,78 +71,65 @@
         <a href="faq.html">FAQ</a>
     </footer> -->
 
-     <script>
-        let currentIndex = 0;
-        let animationInterval;
-        let isAnimating = false;
+<script>
+    const features = document.querySelectorAll('.feature');
+    let current = 0;
 
-        // Show specific feature
-        function showFeature(index) {
-            if (isAnimating) return;
-            
-            const features = document.querySelectorAll('.feature');
-            const currentFeature = features[currentIndex];
-            const nextFeature = features[index];
-            
-            if (currentFeature === nextFeature) return;
-            
-            isAnimating = true;
-            
-            // Start exit animation for current feature
-            if (currentFeature) {
-                currentFeature.classList.add('exiting');
-                currentFeature.classList.remove('active');
-            }
-            
-            // Start enter animation for next feature after a short delay
-            setTimeout(() => {
-                if (currentFeature) {
-                    currentFeature.classList.remove('exiting');
-                }
-                
-                nextFeature.classList.add('active');
-                currentIndex = index;
-                
-                // Reset animation lock after transition completes
-                setTimeout(() => {
-                    isAnimating = false;
-                }, 500);
-            }, 100);
-        }
+    function showFeature(index) {
+      const el = features[index];
 
-        // Go to next feature
-        function nextFeature() {
-            const nextIndex = (currentIndex + 1) % document.querySelectorAll('.feature').length;
-            showFeature(nextIndex);
-        }
+      // Set current visible
+      gsap.set(el, { opacity: 1, y: 0 });
 
-        // Start automatic animation
-        function startAnimation() {
-            animationInterval = setInterval(() => {
-                nextFeature();
-            }, 2000); // Change every 2 seconds
-        }
+      // Animate text in
+      gsap.to(el.querySelectorAll('h3, p'), {
+        opacity: 1,
+        y: 0,
+        stagger: 0.1,
+        duration: 0.4,
+        ease: "power2.out"
+      });
+    }
 
-        // Pause animation
-        function pauseAnimation() {
-            clearInterval(animationInterval);
-        }
+    function hideFeature(index) {
+      const el = features[index];
 
-        // Resume animation
-        function resumeAnimation() {
-            pauseAnimation();
-            startAnimation();
-        }
+      // Animate text out
+      gsap.to(el.querySelectorAll('h3, p'), {
+        opacity: 0,
+        y: -20,
+        duration: 0.3,
+        ease: "power2.in"
+      });
 
-        // Initialize
-        function init() {
-            showFeature(0); // Show first feature
-            startAnimation();
-        }
+      // Slide feature down out of view
+      gsap.to(el, {
+        opacity: 0,
+        y: 100,
+        duration: 0.4,
+        ease: "power2.in"
+      });
+    }
 
-        // Start when page loads
-        init();
-    </script>
+    function cycleFeatures() {
+      hideFeature(current);
+      current = (current + 1) % features.length;
+      showFeature(current);
+    }
+
+    // Set first one visible at start
+    gsap.set(features[0], { opacity: 1, y: 0 });
+    gsap.to(features[0].querySelectorAll('h3, p'), {
+      opacity: 1,
+      y: 0,
+      stagger: 0.1,
+      duration: 0.4,
+      ease: "power2.out"
+    });
+
+    // Cycle every 3 seconds
+    setInterval(cycleFeatures, 3000);
+</script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>

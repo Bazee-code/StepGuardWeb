@@ -40,7 +40,7 @@ body {
     font-weight: 700;
     color: white;
     text-decoration: none;
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    background: linear-gradient(45deg, #6b81ff 40%, #9e4ecd 60%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -83,7 +83,7 @@ body {
 
 #demoVideo {
     width: 50%; 
-    height: 95vh; 
+    height: 80vh; 
     border-radius: 20px;
 }
 
@@ -154,10 +154,10 @@ h1 {
     margin-bottom: 1.5rem;
     line-height: 1.2;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(45deg, #6b81ff 40%, #9e4ecd 60%);
-    -webkit-background-clip: text;
+    /* background: linear-gradient(45deg, #6b81ff 40%, #9e4ecd 60%); */
+    /* -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background-clip: text; */
 }
 
 .hero-subtitle {
@@ -169,7 +169,7 @@ h1 {
 
 .cta-button {
     display: inline-block;
-   background: linear-gradient(135deg, #4b0082 90%, #6a0dad 100%);
+    background: linear-gradient(135deg, #4b0082 90%, #6a0dad 100%);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     animation: fadeInUp 0.8s ease-out;
@@ -188,30 +188,52 @@ h1 {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
+
 .features {
     display: grid;
     gap: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    position: relative;
+    height: 100px; /* fixed height for stacking */
+    overflow: hidden;
 }
 
 .feature {
     backdrop-filter: blur(10px);
-    padding: 1.5rem;
     border-radius: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(100%);
+    
 }
 
-
 .feature h3 {
-    color: white;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    font-size: 2rem;
+    background: linear-gradient(45deg, #fff 40%, #fff 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 0.5rem;
-    font-size: 1.1rem;
 }
 
 .feature p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-    line-height: 1.5;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    font-size: 1.8rem;
+    font-weight: 900;
+    /* background: linear-gradient(45deg, #fff 40%, #fff 60%); */
+    background: linear-gradient(45deg, #6b81ff 40%, #9e4ecd 60%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 
