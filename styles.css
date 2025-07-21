@@ -319,15 +319,31 @@ h1 {
 
     .left-content {
         max-width: 100%;
-        padding: 100px 1rem 1rem;
+        /* padding: 100px 1rem 1rem; */
     }
 
     .right-image {
-        min-height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    #demoVideo {
+        width: 90%; 
+        height: 80vh; 
+        /* border-radius: 20px; */
+        margin-right: 3rem;
     }
 
     .features {
-        grid-template-columns: 1fr;
+        /* grid-template-columns: 1fr; */
+        display: grid;
+        gap: 1.5rem;
+        margin-top: 1rem;
+        position: relative;
+        height: 180px; /* fixed height for stacking */
+        overflow: hidden;
     }
 
     .footer {
