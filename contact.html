@@ -32,7 +32,7 @@
             <h1>Contact Us</h1>
             <p class="subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
 
-            <form class="contact-form" onsubmit="submitForm(event)">
+            <form class="contact-form" action="https://formspree.io/f/mdkdelej" method="POST" onsubmit="submitForm(event)">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="firstName">First Name *</label>
@@ -68,6 +68,14 @@
                     <textarea id="message" name="message" required placeholder="Please describe your question or issue in detail..."></textarea>
                 </div>
 
+                <!-- Hidden field to set the email destination -->
+                <input type="hidden" name="_to" value="support@stepguard.fit">
+                <input type="hidden" name="_subject" value="New Contact Form Submission">
+                
+                <!-- Formspree configuration -->
+                <input type="hidden" name="_next" value="thank-you.html">
+                <input type="hidden" name="_captcha" value="false">
+
                 <button type="submit" class="submit-btn">Send Message</button>
                 
                 <div class="success-message" id="successMessage">
@@ -79,13 +87,6 @@
 
     <script>
         function submitForm(event) {
-            event.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData.entries());
-            
-            // Simulate form submission
             const submitBtn = event.target.querySelector('.submit-btn');
             const originalText = submitBtn.textContent;
             
@@ -93,24 +94,13 @@
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
             
-            // Simulate API call
-            setTimeout(() => {
-                // Show success message
-                document.getElementById('successMessage').style.display = 'block';
-                
-                // Reset form
-                event.target.reset();
-                
-                // Reset button
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    document.getElementById('successMessage').style.display = 'none';
-                }, 5000);
-                
-            }, 1500);
+            // Let the form submit naturally to Formspree
+            // The success message will be handled by Formspree's redirect or you can customize it
+        }
+
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
         }
     </script>
 
