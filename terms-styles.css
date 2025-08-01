@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(135deg, #4b0082 90%, #6a0dad 100%);
+    background: linear-gradient(135deg, #000000 40%, #000000 60%);
     min-height: 100vh;
     color: white;
 }
@@ -24,7 +24,7 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: linear-gradient(135deg, #4b0082 90%, #6a0dad 100%);
+    background: linear-gradient(135deg, #000000 40%, #000000 60%);
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -36,7 +36,8 @@ body {
     font-weight: 700;
     color: white;
     text-decoration: none;
-     background: linear-gradient(45deg, #6b81ff 40%, #9e4ecd 60%);
+     /* background: linear-gradient(45deg, #6b81ff 40%, #9e4ecd 60%); */
+    background: linear-gradient(45deg, #FFA500 100%, #FFD700 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -72,7 +73,7 @@ body {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: white;
+    background: linear-gradient(45deg, #FFA500 100%, #FFD700 90%);
     margin: 3px 0;
     transition: 0.3s;
     border-radius: 2px;
@@ -96,7 +97,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-     background: linear-gradient(135deg, #4b0082 90%, #6a0dad 100%);
+    background: linear-gradient(135deg, #000000 40%, #000000 60%);
     backdrop-filter: blur(20px);
     z-index: 999;
     display: flex;
@@ -129,18 +130,18 @@ body {
 }
 
 .mobile-menu nav a:hover {
-    background: linear-gradient(45deg, #6b81ff 40%, #9e4ecd 60%);
+    background: linear-gradient(45deg, #FFA500 100%, #FFD700 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .content {
-    background: linear-gradient(135deg, #4b0082 90%, #6a0dad 100%);
+    background: linear-gradient(135deg, #000000 40%, #000000 60%);
     backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgb(222, 130, 37);
     animation: fadeInUp 0.8s ease-out;
 }
 
@@ -148,7 +149,7 @@ h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     text-align: center;
-    background: linear-gradient(45deg, #6b81ff 40%, #9e4ecd 60%);
+    background: linear-gradient(45deg, #FFA500 100%, #FFD700 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -164,7 +165,7 @@ h1 {
 h2 {
     font-size: 1.5rem;
     margin: 2rem 0 1rem;
-    background: linear-gradient(45deg, #6b81ff 40%, #9e4ecd 60%);
+    background: #fff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
