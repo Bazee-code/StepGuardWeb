@@ -34,7 +34,7 @@ body {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: white;
+    background: linear-gradient(135deg, #FFA500 100%, #FFD700 90%);
     margin: 3px 0;
     transition: 0.3s;
     border-radius: 2px;
