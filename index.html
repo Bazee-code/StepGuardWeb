@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +11,13 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DR9H1HS1SC"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-DR9H1HS1SC');
+    gtag('config', 'G-DR9H1HS1SC');
 </script>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -44,7 +46,7 @@
         <div class="left-content">
             <div class="hero-section">
                 <h1 class="hero-title">Fitness Meets Productivity</h1>
-                 <div class="features">
+                <div class="features">
                     <div class="feature">
                         <p>Automatically adjust device restrictions based on your daily activity levels</p>
                     </div>
@@ -58,17 +60,24 @@
                         <p>Get detailed insights into your activity patterns and device usage correlation</p>
                     </div>
                 </div>
-                <a href="https://apps.apple.com/app/stepguard-steps-to-unlock-apps/id6745701169" target="_blank" rel="noopener">
-                <img src="assets/download.svg" alt="Download on the App Store" style="height: 80px;" />
-                </a>
+                <div>
+                    <a href="https://apps.apple.com/app/stepguard-steps-to-unlock-apps/id6745701169" target="_blank"
+                        rel="noopener">
+                        <img src="assets/download.svg" alt="Download on the App Store" style="height: 80px;" />
+                    </a>
+                    <a href="https://tinylaunch.com" target="_blank" rel="noopener">
+                        <img src="https://tinylaunch.com/tinylaunch_badge_3.svg" alt="TinyLaunch Badge"
+                            style="height:80px;padding-left: 10px;" />
+                    </a>
+                </div>
             </div>
         </div>
 
         <!-- Right Side Image -->
         <div class="right-image">
             <video id="demoVideo" autoplay muted loop playsinline>
-            <source src="/assets/newdemo.mov" type="video/mp4" />
-            Your browser does not support the video tag.
+                <source src="/assets/newdemo.mov" type="video/mp4" />
+                Your browser does not support the video tag.
             </video>
         </div>
     </div>
@@ -80,70 +89,71 @@
         <a href="faq.html">FAQ</a>
     </footer> -->
 
-<script>
-    const features = document.querySelectorAll('.feature');
-    let current = 0;
+    <script>
+        const features = document.querySelectorAll('.feature');
+        let current = 0;
 
-    function showFeature(index) {
-      const el = features[index];
+        function showFeature(index) {
+            const el = features[index];
 
-      // Set current visible
-      gsap.set(el, { opacity: 1, y: 0 });
+            // Set current visible
+            gsap.set(el, { opacity: 1, y: 0 });
 
-      // Animate text in
-      gsap.to(el.querySelectorAll('h3, p'), {
-        opacity: 1,
-        y: 0,
-        stagger: 0.1,
-        duration: 0.4,
-        ease: "power2.out"
-      });
-    }
+            // Animate text in
+            gsap.to(el.querySelectorAll('h3, p'), {
+                opacity: 1,
+                y: 0,
+                stagger: 0.1,
+                duration: 0.4,
+                ease: "power2.out"
+            });
+        }
 
-    function hideFeature(index) {
-      const el = features[index];
+        function hideFeature(index) {
+            const el = features[index];
 
-      // Animate text out
-      gsap.to(el.querySelectorAll('h3, p'), {
-        opacity: 0,
-        y: -20,
-        duration: 0.3,
-        ease: "power2.in"
-      });
+            // Animate text out
+            gsap.to(el.querySelectorAll('h3, p'), {
+                opacity: 0,
+                y: -20,
+                duration: 0.3,
+                ease: "power2.in"
+            });
 
-      // Slide feature down out of view
-      gsap.to(el, {
-        opacity: 0,
-        y: 100,
-        duration: 0.4,
-        ease: "power2.in"
-      });
-    }
+            // Slide feature down out of view
+            gsap.to(el, {
+                opacity: 0,
+                y: 100,
+                duration: 0.4,
+                ease: "power2.in"
+            });
+        }
 
-    function cycleFeatures() {
-      hideFeature(current);
-      current = (current + 1) % features.length;
-      showFeature(current);
-    }
+        function cycleFeatures() {
+            hideFeature(current);
+            current = (current + 1) % features.length;
+            showFeature(current);
+        }
 
-    // Set first one visible at start
-    gsap.set(features[0], { opacity: 1, y: 0 });
-    gsap.to(features[0].querySelectorAll('h3, p'), {
-      opacity: 1,
-      y: 0,
-      stagger: 0.1,
-      duration: 0.4,
-      ease: "power2.out"
-    });
+        // Set first one visible at start
+        gsap.set(features[0], { opacity: 1, y: 0 });
+        gsap.to(features[0].querySelectorAll('h3, p'), {
+            opacity: 1,
+            y: 0,
+            stagger: 0.1,
+            duration: 0.4,
+            ease: "power2.out"
+        });
 
-    // Cycle every 3 seconds
-    setInterval(cycleFeatures, 3000);
-</script>
+        // Cycle every 3 seconds
+        setInterval(cycleFeatures, 3000);
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>    
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
     <script src="./index.js"></script>
-    
+
 </body>
+
 </html>
