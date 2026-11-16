@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join my group - Step Guard</title>
+    <meta name="apple-itunes-app" content="app-id=6745701169">
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+    <link rel="apple-touch-icon" href="./assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contact-styles.css" />
+    <style>
+        .invite-actions a { display: block; text-align: center; text-decoration: none; box-sizing: border-box; }
+        .invite-actions .secondary { background: #ffffff; color: #000000; border: 1px solid #000000; }
+        .invite-steps { margin-top: 2rem; padding-left: 1.25rem; line-height: 1.7; }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DR9H1HS1SC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DR9H1HS1SC');
+</script>
+<body>
+    <header class="header">
+        <img src="./assets/logo.png" style="height: 40px; width: 40px;" />
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </div>
+
+    <!-- Group invite landing page. With StepGuard installed, iOS opens
+         stepguard.fit/join links straight in the app (universal links), so
+         this page is only seen by people who don't have it yet. -->
+    <div class="container">
+        <div class="content">
+            <h1>You're invited to a StepGuard group</h1>
+            <p class="subtitle">Race your friends to your step goals every day. Joining a group is free.</p>
+
+            <div class="invite-actions">
+                <a class="submit-btn" href="https://apps.apple.com/app/stepguard-steps-to-unlock-apps/id6745701169">Get StepGuard</a>
+                <a class="submit-btn secondary" id="openInvite" href="#">I have the app: open invite</a>
+            </div>
+
+            <ol class="invite-steps">
+                <li>Install StepGuard and finish setting it up.</li>
+                <li>Come back here and tap <strong>open invite</strong>, or copy this page's link and tap <strong>Paste</strong> in the app's Friends tab.</li>
+            </ol>
+        </div>
+    </div>
+</body>
+
+<script src="./index.js"></script>
+<script>
+    var token = new URLSearchParams(window.location.search).get("token") || "";
+    document.getElementById("openInvite").href = "yourmainapp://join?token=" + encodeURIComponent(token);
+</script>
+</html>

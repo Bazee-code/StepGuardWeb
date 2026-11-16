@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["74A56F4B9J.co.eugeneobare.FitFocus"],
+        "components": [
+          { "/": "/join*", "comment": "StepGuard group invites" }
+        ]
+      }
+    ]
+  }
+}
