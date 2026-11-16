@@ -47,7 +47,7 @@
             <h2>2. Data Access We Request</h2>
             <p>To provide our step-based app and website restriction services, StepGuard requires access to specific data on your device. This access is essential for the app to function properly:</p>
             <ul>
-                <li><strong>Step Count Data Access:</strong> We request permission to read your daily step counts from your device's built-in health sensors, Apple Watch, or connected fitness trackers. This data is processed on your device to determine when restrictions should be lifted or applied. Your daily step total only leaves your device if you join or create a Group (see Section 5).</li>
+                <li><strong>Step Count Data Access:</strong> We request permission to read your daily step counts from your device's built-in health sensors, Apple Watch, or connected fitness trackers. This data is processed on your device to determine when restrictions should be lifted or applied. Your step count never leaves your device. If you join a Group, members only see whether you hit the group's daily goal (see Section 5).</li>
                 <li><strong>App Usage Monitoring:</strong> We require permission to monitor which apps you use and for how long. This allows us to enforce restrictions on specific applications based on your step count goals. All monitoring and restriction logic operates locally on your device without any external data transmission.</li>
                 <li><strong>Screen Time and Device Controls:</strong> We request access to your device's screen time controls and app restriction features. This enables us to automatically block or unblock apps and websites based on whether you've met your daily step targets. These controls are managed entirely through your device's built-in systems.</li>
                 <li><strong>Network Access for Website Restrictions:</strong> We may request permission to monitor network activity to implement website restrictions through your device's content filtering capabilities. This monitoring occurs locally and no browsing data is collected or stored.</li>
@@ -75,7 +75,7 @@
             <p>We never sell your data. StepGuard uses the following services, and only for the purposes described:</p>
             <ul>
                 <li><strong>Purchases (Apple and RevenueCat):</strong> Payments are processed by Apple through the App Store; we never see your payment details. We use RevenueCat to manage subscriptions. It receives an anonymous app user ID, your purchase and subscription history, and which upgrade screen you saw or purchased from. It does not receive your health data, your name or your app selections.</li>
-                <li><strong>Groups (Apple iCloud):</strong> If you join or create a Group, your chosen display name, daily step total, streak, step goal and whether you hit it are stored in Apple's CloudKit and shown to members of that group. Group names and invite links are stored the same way. Leaving a group stops sharing new progress.</li>
+                <li><strong>Groups (Apple iCloud):</strong> If you join or create a Group, your chosen display name, whether you hit the group's daily step goal, and your streak are stored in Apple's CloudKit and shown to members of that group. Your actual step count is never shared. Group names and invite links are stored the same way. Leaving a group stops sharing new progress.</li>
                 <li><strong>Website Analytics:</strong> Our website (not the app) uses Google Analytics to understand visits to the site.</li>
                 <li><strong>No Advertising Networks:</strong> We do not integrate with advertising networks, and we do not use any of your data for advertising.</li>
                 <li><strong>Legal Requests:</strong> We do not hold your data on our own servers. Requests relating to data held by Apple or RevenueCat are handled under their own policies.</li>
@@ -85,7 +85,7 @@
             <p>Your health and fitness data receives special protection:</p>
             <ul>
                 <li><strong>Health App Integration:</strong> StepGuard only reads your step count from Apple Health, and complies with Apple's privacy and security requirements for health data.</li>
-                <li><strong>Limited Use:</strong> Step data is used to unlock your apps and show your progress. It is never sold, never used for advertising, and never shared with RevenueCat. The only time it leaves your device is your daily step total, shared with a Group you choose to join.</li>
+                <li><strong>Limited Use:</strong> Step data is used to unlock your apps and show your progress. It is never sold, never used for advertising, and never shared with RevenueCat. Your step count never leaves your device. A Group you choose to join only sees whether you hit its daily goal and your streak.</li>
                 <li><strong>HIPAA Considerations:</strong> While StepGuard is not a covered entity under HIPAA, we follow privacy-by-design principles that exceed typical health data protection standards.</li>
             </ul>
 
@@ -101,7 +101,7 @@
             <h2>8. Children's Privacy</h2>
             <p>StepGuard's privacy-first design makes it suitable for users of all ages:</p>
             <ul>
-                <li><strong>Minimal Data:</strong> StepGuard does not ask for a name, email address or account. The optional Groups feature shares a chosen display name and daily step progress with group members, so younger users should only join groups with people they know.</li>
+                <li><strong>Minimal Data:</strong> StepGuard does not ask for a name, email address or account. The optional Groups feature shares a chosen display name, whether you hit the daily goal and your streak with group members, so younger users should only join groups with people they know.</li>
                 <li><strong>Parental Controls:</strong> Parents can monitor and control the app's permissions through standard device parental control features.</li>
                 <li><strong>Educational Use:</strong> The app can help children develop healthy digital habits without compromising their privacy.</li>
             </ul>
