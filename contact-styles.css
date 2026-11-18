@@ -5,10 +5,10 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(135deg, #000000 40%, #000000 60%);
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #ffffff;
     min-height: 100vh;
-    color: white;
+    color: #000000;
 }
 
 .container {
@@ -34,7 +34,7 @@ body {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: linear-gradient(135deg, #FFA500 100%, #FFD700 90%);
+    background: #000000;
     margin: 3px 0;
     transition: 0.3s;
     border-radius: 2px;
@@ -58,7 +58,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(135deg, #000000 40%, #000000 60%);
+    background: rgba(255, 255, 255, 0.97);
     backdrop-filter: blur(20px);
     z-index: 999;
     display: flex;
@@ -83,7 +83,7 @@ body {
 }
 
 .mobile-menu nav a {
-    color: white;
+    color: #000000;
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 500;
@@ -91,10 +91,8 @@ body {
 }
 
 .mobile-menu nav a:hover {
-    background: linear-gradient(45deg, #FFA500 100%, #FFD700 90%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .header {
@@ -103,7 +101,7 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: linear-gradient(135deg, #000000 40%, #000000 60%);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(20px);
     padding: 1rem 2rem;
     display: flex;
@@ -114,33 +112,28 @@ body {
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: white;
+    color: #000000;
     text-decoration: none;
-    background: linear-gradient(45deg, #FFA500 100%, #FFD700 90%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .back-link {
-    color: white;
+    color: #000000;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .back-link:hover {
-    color: #4ecdc4;
+    opacity: 0.6;
 }
 
 .content {
-    background: linear-gradient(135deg, #000000 40%, #000000 60%);
-    backdrop-filter: blur(10px);
+    background: #ffffff;
     padding: 2rem;
     border-radius: 20px;
-    border: 1px solid rgb(222, 130, 37);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     animation: fadeInUp 0.8s ease-out;
 }
 
@@ -148,15 +141,12 @@ h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     text-align: center;
-    background: linear-gradient(45deg, #FFA500 100%, #FFD700 90%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #000000;
 }
 
 .subtitle {
     text-align: center;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.65);
     margin-bottom: 2rem;
     font-size: 1.1rem;
 }
@@ -169,10 +159,10 @@ h1 {
 }
 
 .contact-item {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.03);
     padding: 1.5rem;
     border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -182,13 +172,13 @@ h1 {
 }
 
 .contact-item h3 {
-    color: #4ecdc4;
+    color: #000000;
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }
 
 .contact-item p {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.75);
     font-size: 0.9rem;
 }
 
@@ -209,29 +199,29 @@ h1 {
 label {
     display: block;
     margin-bottom: 0.5rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.85);
     font-weight: 500;
 }
 
 input, textarea, select {
     width: 100%;
     padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-    color: white;
+    color: #000000;
     font-size: 1rem;
     transition: all 0.3s ease;
 }
 
 input:focus, textarea:focus, select:focus {
     outline: none;
-    border-color: #4ecdc4;
-    box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2);
+    border-color: #000000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 input::placeholder, textarea::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.4);
 }
 
 textarea {
@@ -244,13 +234,12 @@ select {
 }
 
 select option {
-    background: #333;
-    color: white;
+    background: #ffffff;
+    color: #000000;
 }
 
 .submit-btn {
-    /* background: linear-gradient(45deg, #ff6b6b, #4ecdc4); */
-    background: linear-gradient(45deg, #FFA500 100%, #FFD700 90%);
+    background: #000000;
     color: white;
     padding: 0.75rem 2rem;
     border: none;
@@ -269,9 +258,9 @@ select option {
 }
 
 .success-message {
-    background: rgba(78, 205, 196, 0.2);
-    border: 1px solid #4ecdc4;
-    color: #4ecdc4;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid #000000;
+    color: #000000;
     padding: 1rem;
     border-radius: 10px;
     margin-top: 1rem;
