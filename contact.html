@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Step Guard</title>
+    <title>Contact StepGuard Support</title>
+    <meta name="description" content="Get help with StepGuard, the iPhone app that locks distracting apps until you hit your step goal. Email support@stepguard.live or send us a message.">
+    <link rel="canonical" href="https://stepguard.live/contact">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="StepGuard">
+    <meta property="og:url" content="https://stepguard.live/contact">
+    <meta property="og:title" content="Contact StepGuard Support">
+    <meta property="og:description" content="Get help with StepGuard, the iPhone app that locks distracting apps until you hit your step goal. Email support@stepguard.live or send us a message.">
+    <meta property="og:image" content="https://stepguard.live/assets/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="apple-itunes-app" content="app-id=6745701169">
     <link rel="icon" href="./favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
@@ -11,8 +21,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="contact-styles.css" />
-</head>
-<!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DR9H1HS1SC"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -21,10 +30,13 @@
 
   gtag('config', 'G-DR9H1HS1SC');
 </script>
+    <link rel="stylesheet" href="/site.css" />
+</head>
+
 <body>
     <header class="header">
-        <img src="./assets/logo.png" style="height: 40px; width: 40px;" />
-        <button class="hamburger" onclick="toggleMenu()">
+        <a href="/" aria-label="StepGuard home"><img src="/assets/logo.png" alt="StepGuard logo" width="40" height="40" /></a>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
             <span></span>
             <span></span>
             <span></span>
@@ -34,11 +46,11 @@
      <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <nav>
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact</a>
-            <a href="terms.html">Terms & Conditions</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="faq.html">FAQ</a>
+            <a href="/">Home</a>
+            <a href="/contact">Contact</a>
+            <a href="/terms">Terms & Conditions</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/faq">FAQ</a>
         </nav>
     </div>
 
@@ -119,6 +131,19 @@
         }
     </script>
 
-    <script src="./index.js"></script>
+    <footer class="site-footer">
+        <nav aria-label="Footer">
+            <a href="/">Home</a>
+            <a href="/faq">FAQ</a>
+            <a href="/contact">Contact</a>
+            <a href="/terms">Terms</a>
+            <a href="/privacy">Privacy</a>
+            <a href="https://apps.apple.com/app/apple-store/id6745701169?pt=127825166&ct=website_contact&mt=8" data-placement="footer_nav" target="_blank" rel="noopener">Download on the App Store</a>
+        </nav>
+        <p>© 2026 StepGuard · <a href="mailto:support@stepguard.live">support@stepguard.live</a></p>
+    </footer>
+
+    <script src="/index.js"></script>
+    <script src="/site.js"></script>
 </body>
 </html>

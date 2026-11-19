@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join my group - Step Guard</title>
+    <meta name="robots" content="noindex">
     <link rel="icon" href="./favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
@@ -17,8 +18,7 @@
         .invite-actions .secondary { background: #ffffff; color: #000000; border: 1px solid #000000; }
         .invite-steps { margin-top: 2rem; padding-left: 1.25rem; line-height: 1.7; }
     </style>
-</head>
-<!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DR9H1HS1SC"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -26,10 +26,13 @@
   gtag('js', new Date());
   gtag('config', 'G-DR9H1HS1SC');
 </script>
+    <link rel="stylesheet" href="/site.css" />
+</head>
+
 <body>
     <header class="header">
-        <img src="./assets/logo.png" style="height: 40px; width: 40px;" />
-        <button class="hamburger" onclick="toggleMenu()">
+        <a href="/" aria-label="StepGuard home"><img src="/assets/logo.png" alt="StepGuard logo" width="40" height="40" /></a>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
             <span></span>
             <span></span>
             <span></span>
@@ -38,11 +41,11 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <nav>
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact</a>
-            <a href="terms.html">Terms & Conditions</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="faq.html">FAQ</a>
+            <a href="/">Home</a>
+            <a href="/contact">Contact</a>
+            <a href="/terms">Terms & Conditions</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/faq">FAQ</a>
         </nav>
     </div>
 
@@ -55,7 +58,7 @@
             <p class="subtitle">Race your friends to your step goals every day. Joining a group is free.</p>
 
             <div class="invite-actions">
-                <a class="submit-btn" href="https://apps.apple.com/app/stepguard-steps-to-unlock-apps/id6745701169">Get StepGuard</a>
+                <a class="submit-btn" href="https://apps.apple.com/app/apple-store/id6745701169?pt=127825166&ct=website_join_invite&mt=8" data-placement="join_invite">Get StepGuard</a>
                 <a class="submit-btn secondary" id="openInvite" href="#">I have the app: open invite</a>
             </div>
 
@@ -67,7 +70,20 @@
     </div>
 </body>
 
-<script src="./index.js"></script>
+<footer class="site-footer">
+        <nav aria-label="Footer">
+            <a href="/">Home</a>
+            <a href="/faq">FAQ</a>
+            <a href="/contact">Contact</a>
+            <a href="/terms">Terms</a>
+            <a href="/privacy">Privacy</a>
+            <a href="https://apps.apple.com/app/apple-store/id6745701169?pt=127825166&ct=website_join&mt=8" data-placement="footer_nav" target="_blank" rel="noopener">Download on the App Store</a>
+        </nav>
+        <p>© 2026 StepGuard · <a href="mailto:support@stepguard.live">support@stepguard.live</a></p>
+    </footer>
+
+    <script src="/index.js"></script>
+    <script src="/site.js"></script>
 <script>
     var token = new URLSearchParams(window.location.search).get("token") || "";
     document.getElementById("openInvite").href = "yourmainapp://join?token=" + encodeURIComponent(token);
