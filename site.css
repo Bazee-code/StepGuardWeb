@@ -1,0 +1,157 @@
+/* Shared across every page: footer + homepage content sections. */
+
+.section {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 72px 24px;
+    color: #000;
+    scroll-margin-top: 72px; /* clear the fixed header on #anchor links */
+}
+
+.section h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.section h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.section p,
+.section li {
+    color: rgba(0, 0, 0, 0.72);
+    line-height: 1.65;
+}
+
+.section-lead {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.steps {
+    list-style: none;
+    counter-reset: step;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.steps li {
+    counter-increment: step;
+    border: 1px solid #e6e6e3;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.steps li::before {
+    content: counter(step);
+    display: inline-grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.screens {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+}
+
+.screens img {
+    flex: 0 0 auto;
+    width: min(220px, 60vw);
+    height: auto;
+    border-radius: 18px;
+    border: 1px solid #e6e6e3;
+    scroll-snap-align: start;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: #f8f8f5;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.card ul {
+    padding-left: 1.1rem;
+}
+
+.fine {
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+}
+
+.qa h3 {
+    margin-top: 1.75rem;
+}
+
+.qa h3:first-child {
+    margin-top: 0;
+}
+
+.more {
+    margin-top: 2rem;
+}
+
+.section a {
+    color: #000;
+    font-weight: 600;
+}
+
+.cta-final {
+    text-align: center;
+}
+
+.cta-final .section-lead {
+    margin-bottom: 1.5rem;
+}
+
+.site-footer {
+    border-top: 1px solid #e6e6e3;
+    padding: 32px 24px 40px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.6);
+    background: #fff;
+}
+
+.site-footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 24px;
+    margin-bottom: 12px;
+}
+
+.site-footer a {
+    color: rgba(0, 0, 0, 0.75);
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 48px 16px;
+    }
+}

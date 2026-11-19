@@ -41,7 +41,9 @@ function spinAnimation() {
 }
 
 // Run once when the page loads
+// Only the homepage has the demo video and loads GSAP.
 window.addEventListener('load', () => {
+  if (typeof gsap === 'undefined' || !document.getElementById('demoVideo')) return;
   spinAnimation(); // Initial run
-  setInterval(spinAnimation, 34000); // Repeat every 15 seconds
+  setInterval(spinAnimation, 34000); // Repeat every 34 seconds
 });
