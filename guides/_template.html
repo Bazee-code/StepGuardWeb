@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--
+  GUIDE TEMPLATE. Copy to guides/<slug>.html, then replace every {{PLACEHOLDER}}.
+  Before publishing:
+    1. Delete the <meta name="robots" content="noindex"> line below (it only keeps this template out of Google).
+    2. Add the guide to guides/index.html and sitemap.xml.
+    3. Link to it from at least two existing pages that already get traffic (homepage, FAQ, other guides).
+    4. Run: python3 tools/check_guides.py
+  Rules: answer the search question in the first paragraph, no invented statistics,
+  only claim what StepGuard really does (see README.md "Facts about the app").
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <!-- Title: under ~60 characters, main keyword first. -->
+    <title>{{TITLE}} | StepGuard</title>
+    <!-- Description: 140–160 characters, says what the reader gets. -->
+    <meta name="description" content="{{DESCRIPTION}}">
+    <link rel="canonical" href="https://stepguard.live/guides/{{SLUG}}">
+    <meta name="apple-itunes-app" content="app-id=6745701169">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="StepGuard">
+    <meta property="og:url" content="https://stepguard.live/guides/{{SLUG}}">
+    <meta property="og:title" content="{{TITLE}}">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:image" content="https://stepguard.live/assets/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/site.css" />
+    <link rel="stylesheet" href="/guides.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "{{TITLE}}",
+          "description": "{{DESCRIPTION}}",
+          "url": "https://stepguard.live/guides/{{SLUG}}",
+          "mainEntityOfPage": "https://stepguard.live/guides/{{SLUG}}",
+          "image": "https://stepguard.live/assets/og-image.jpg",
+          "datePublished": "{{DATE_PUBLISHED}}",
+          "dateModified": "{{DATE_MODIFIED}}",
+          "author": { "@type": "Organization", "name": "StepGuard", "url": "https://stepguard.live/" },
+          "publisher": { "@type": "Organization", "name": "StepGuard", "logo": { "@type": "ImageObject", "url": "https://stepguard.live/assets/logo.png" } }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://stepguard.live/" },
+            { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://stepguard.live/guides/" },
+            { "@type": "ListItem", "position": 3, "name": "{{SHORT_TITLE}}", "item": "https://stepguard.live/guides/{{SLUG}}" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DR9H1HS1SC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-DR9H1HS1SC');
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <a href="/" aria-label="StepGuard home"><img src="/assets/logo.png" alt="StepGuard logo" width="40" height="40" /></a>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <nav>
+            <a href="/">Home</a>
+            <a href="/guides/">Guides</a>
+            <a href="/faq">FAQ</a>
+            <a href="/contact">Contact</a>
+            <a href="/terms">Terms & Conditions</a>
+            <a href="/privacy">Privacy Policy</a>
+        </nav>
+    </div>
+
+    <main class="guide-main">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/guides/">Guides</a> › {{SHORT_TITLE}}</nav>
+
+        <article>
+            <h1>{{H1}}</h1>
+            <p class="guide-meta">Updated <time datetime="{{DATE_MODIFIED}}">{{DATE_MODIFIED_HUMAN}}</time> · {{READ_MINUTES}} min read</p>
+
+            <div class="guide-body">
+                <!-- The direct answer, in 2–4 sentences. This is what Google and AI answers quote. -->
+                <div class="tldr">
+                    <p>{{SHORT_ANSWER}}</p>
+                </div>
+
+                <nav class="toc" aria-label="On this page">
+                    <p>On this page</p>
+                    <ol>
+                        <li><a href="#{{SECTION_1_ID}}">{{SECTION_1_TITLE}}</a></li>
+                        <li><a href="#{{SECTION_2_ID}}">{{SECTION_2_TITLE}}</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ol>
+                </nav>
+
+                <h2 id="{{SECTION_1_ID}}">{{SECTION_1_TITLE}}</h2>
+                <p>{{SECTION_1_BODY}}</p>
+
+                <!-- One CTA mid-article. Change ct=guide_{{SLUG}} only if the slug changes. -->
+                <aside class="guide-cta">
+                    <img class="app-icon" src="/assets/logo.png" alt="" width="64" height="64" loading="lazy">
+                    <div>
+                        <h2>{{CTA_HEADLINE}}</h2>
+                        <p>StepGuard locks the apps you choose until you hit your daily step goal. Free on iPhone.</p>
+                        <a class="cta-btn" data-placement="guide_cta" href="https://apps.apple.com/app/apple-store/id6745701169?pt=127825166&ct=guide_{{SLUG}}&mt=8" target="_blank" rel="noopener">Get StepGuard free</a>
+                    </div>
+                </aside>
+
+                <h2 id="{{SECTION_2_ID}}">{{SECTION_2_TITLE}}</h2>
+                <p>{{SECTION_2_BODY}}</p>
+
+                <section class="guide-faq">
+                    <h2 id="faq">FAQ</h2>
+                    <h3>{{FAQ_1_Q}}</h3>
+                    <p>{{FAQ_1_A}}</p>
+                </section>
+            </div>
+        </article>
+
+        <aside class="related">
+            <h2>Related guides</h2>
+            <ul>
+                <li><a href="/guides/{{RELATED_SLUG}}">{{RELATED_TITLE}}</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+        <nav aria-label="Footer">
+            <a href="/">Home</a>
+            <a href="/guides/">Guides</a>
+            <a href="/faq">FAQ</a>
+            <a href="/contact">Contact</a>
+            <a href="/terms">Terms</a>
+            <a href="/privacy">Privacy</a>
+            <a href="https://apps.apple.com/app/apple-store/id6745701169?pt=127825166&ct=guide_{{SLUG}}&mt=8" data-placement="footer_nav" target="_blank" rel="noopener">Download on the App Store</a>
+        </nav>
+        <p>© 2026 StepGuard · <a href="mailto:support@stepguard.live">support@stepguard.live</a></p>
+    </footer>
+
+    <script src="/index.js"></script>
+    <script src="/site.js"></script>
+</body>
+
+</html>
